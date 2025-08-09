@@ -1,0 +1,186 @@
+/* Modern CSS for cart.html - consistent with overall site design */
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 15px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #fff, #f0f0f0, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: -1px;
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+nav a.active,
+nav a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Main Content */
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+main h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Cart Table */
+#cart-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+#cart-table thead {
+  display: none; /* Hide table header for mobile card style */
+}
+
+#cart-table tbody tr {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+
+#cart-table tbody tr:hover {
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+}
+
+#cart-table tbody tr td {
+  border: none;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+#cart-table tbody tr td:nth-child(1) {
+  font-weight: 600;
+  font-size: 1.1rem;
+  flex: 2;
+}
+
+#cart-table tbody tr td:nth-child(2),
+#cart-table tbody tr td:nth-child(3),
+#cart-table tbody tr td:nth-child(4) {
+  justify-content: center;
+  flex: 1;
+}
+
+#cart-table tbody tr td:nth-child(5) {
+  justify-content: flex-end;
+  flex: 0.5;
+}
+
+#cart-table tbody tr td input[type="number"] {
+  width: 60px;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+#cart-table tbody tr td input[type="number"]:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 8px rgba(102, 126, 234, 0.5);
+}
+
+button.remove {
+  color: #ff4d4d;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+button.remove:hover {
+  color: #cc0000;
+  text-decoration: underline;
+}
+
+/* Total Section */
+.total {
+  text-align: right;
+  margin-top: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 60px;
+  font-size:

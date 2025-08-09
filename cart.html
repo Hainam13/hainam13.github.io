@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Giỏ hàng - Fashion Store</title>
+  <link rel="stylesheet" href="css/cart.css" />
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    .total {
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    button.remove {
+      color: red;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <h1>Fashion Store</h1>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="contact.html">Liên hệ</a>
+      <a href="cart.html" class="active">Giỏ hàng</a>
+      <a href="profile.html">Hồ sơ</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Giỏ hàng của bạn</h2>
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Sản phẩm</th>
+          <th>Giá</th>
+          <th>Số lượng</th>
+          <th>Thành tiền</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Cart items will be dynamically loaded here -->
+      </tbody>
+    </table>
+
+    <div class="total">
+      <strong>Tổng cộng:</strong> <span id="total">0</span> đ
+    </div>
+    
+    <div style="margin-top: 20px;">
+      <button onclick="clearCart()" style="background: #f44336; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">Xóa toàn bộ giỏ hàng</button>
+      <button onclick="window.location.href='index.html'" style="background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px;">Tiếp tục mua sắm</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Fashion Store</p>
+  </footer>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>

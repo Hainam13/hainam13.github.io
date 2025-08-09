@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fashion Store - Trang Chủ</title>
+  <link rel="stylesheet" href="css/index-improved.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body onload="checkLogin()">
+  <header>
+    <div class="header-container">
+      <img src="images/logo.png" alt="NamStyle Logo" class="logo">
+      <h1>NamStyle Fashion Store</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="cart.html">Giỏ hàng</a></li>
+          <li><a href="contact.html">Liên hệ</a></li>
+          <li><a href="profile.html">Hồ sơ</a></li>
+          <li id="loginMenuItem"><a href="login.html">Đăng nhập</a></li>
+          <li id="registerMenuItem"><a href="register.html">Đăng ký</a></li>
+          <li id="logoutMenuItem" style="display: none;"><a href="#" onclick="logout()">Đăng xuất</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="banner">
+      <div class="banner-content">
+        <h2 class="hero-title">Chào mừng đến với Fashion Store!</h2>
+        <p class="hero-subtitle">Khám phá những xu hướng thời trang mới nhất!</p>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2>Sản phẩm mới</h2>
+      <div class="product-grid">
+        <!-- Sản phẩm 1 -->
+        <div class="product-card" data-id="1" data-name="Áo sơ mi trắng" data-price="350000" data-image="images/ao-so-mi1.jpg">
+          <img src="images/ao-so-mi1.jpg" alt="Áo sơ mi nam">
+          <div class="product-info">
+            <h3>Áo sơ mi trắng</h3>
+            <p>Giá: 350.000đ</p>
+            <button class="add-to-cart-btn" onclick="addToCart(1, 'Áo sơ mi trắng', 350000, 'images/ao-so-mi1.jpg')">Mua ngay</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 2 -->
+        <div class="product-card" data-id="2" data-name="Áo thun" data-price="220000" data-image="images/ao-thun1 (1).jpg">
+          <img src="images/ao-thun1 (1).jpg" alt="Áo thun nam">
+          <div class="product-info">
+            <h3>Áo thun</h3>
+            <p>Giá: 220.000đ</p>
+            <button class="add-to-cart-btn" onclick="addToCart(2, 'Áo thun', 220000, 'images/ao-thun1 (1).jpg')">Mua ngay</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 3 -->
+        <div class="product-card" data-id="3" data-name="Áo khoác kaki" data-price="490000" data-image="images/ao-khoac1.jpg">
+          <img src="images/ao-khoac1.jpg" alt="Áo khoác nam">
+          <div class="product-info">
+            <h3>Áo khoác kaki</h3>
+            <p>Giá: 490.000đ</p>
+            <button class="add-to-cart-btn" onclick="addToCart(3, 'Áo khoác kaki', 490000, 'images/ao-khoac1.jpg')">Mua ngay</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 4 -->
+        <div class="product-card" data-id="4" data-name="Quần jean xanh" data-price="400000" data-image="images/quan-jean1.jpg">
+          <img src="images/quan-jean1.jpg" alt="Quần jean nam">
+          <div class="product-info">
+            <h3>Quần jean xanh</h3>
+            <p>Giá: 400.000đ</p>
+            <button class="add-to-cart-btn" onclick="addToCart(4, 'Quần jean xanh', 400000, 'images/quan-jean1.jpg')">Mua ngay</button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 5 -->
+        <div class="product-card" data-id="5" data-name="Giày sneaker" data-price="650000" data-image="images/giay1 (1).jpg">
+          <img src="images/giay1 (1).jpg" alt="Giày sneaker nam">
+          <div class="product-info">
+            <h3>Giày sneaker</h3>
+            <p>Giá: 650.000đ</p>
+            <button class="add-to-cart-btn" onclick="addToCart(5, 'Giày sneaker', 650000, 'images/giay1 (1).jpg')">Mua ngay</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products">
+      <h3>Sản phẩm nổi bật</h3>
+      <div class="product-grid">
+        <div class="product-card" data-id="6" data-name="Nón lưỡi trai đen" data-price="120000" data-image="images/non-1.jpg">
+          <img src="images/non-1.jpg" alt="Nón lưỡi trai">
+          <div class="product-info">
+            <h3>Nón lưỡi trai đen</h3>
+            <p>Giá: 120.000đ</p>
+            <button class="add-to-cart-btn" onclick="addToCart(6, 'Nón lưỡi trai đen', 120000, 'images/non-1.jpg')">Mua ngay</button>
+          </div>
+        </div>
+        <div class="product-card" data-id="7" data-name="Quần short nam" data-price="180000" data-image="images/quan1.jpg">
+          <img src="images/quan1.jpg" alt="Quần short">
+          <div class="product-info">
+            <h3>Quần short nam</h3>
+            <p>Giá: 180.000đ</p>
+            <button class="add-to-cart-btn" onclick="addToCart(7, 'Quần short nam', 180000, 'images/quan1.jpg')">Mua ngay</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Fashion Store. All rights reserved.</p>
+  </footer>
+
+  <button class="scroll-top" onclick="scrollToTop()">↑</button>
+
+  <script src="js/cart.js"></script>
+  <script>
+
+    function checkLogin() {
+      const isLoggedIn = localStorage.getItem("isLoggedIn");
+      const loginMenuItem = document.getElementById("loginMenuItem");
+      const registerMenuItem = document.getElementById("registerMenuItem");
+      const logoutMenuItem = document.getElementById("logoutMenuItem");
+
+      if (isLoggedIn === "true") {
+        loginMenuItem.style.display = "none";
+        registerMenuItem.style.display = "none";
+        logoutMenuItem.style.display = "block";
+      } else {
+        loginMenuItem.style.display = "block";
+        registerMenuItem.style.display = "block";
+        logoutMenuItem.style.display = "none";
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem("isLoggedIn");
+      window.location.href = "login.html";
+    }
+
+    // Scroll to top functionality
+    window.onscroll = function() {
+      const scrollTop = document.querySelector('.scroll-top');
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollTop.classList.add('show');
+      } else {
+        scrollTop.classList.remove('show');
+      }
+    };
+
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

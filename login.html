@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập - Fashion Store</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+  <form id="loginForm" onsubmit="return handleLogin()">
+    <h2>Đăng nhập</h2>
+    
+    <label>Email:</label>
+    <input type="email" id="email" required>
+
+    <label>Mật khẩu:</label>
+    <div style="position: relative;">
+      <input type="password" id="password" required>
+      <button type="button" onclick="togglePassword('password')" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; font-size: 18px;">👁️</button>
+    </div>
+
+    <button type="submit">Đăng nhập</button>
+    <p id="loginMessage"></p>
+    
+    <p style="text-align: center; margin-top: 20px;">
+      Chưa có tài khoản? <a href="register.html" style="color: #1a73e8; text-decoration: none;">Đăng ký ngay</a>
+    </p>
+  </form>
+
+  <script>
+    function handleLogin() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const msg = document.getElementById("loginMessage");
+
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (user && email === user.email && password === user.password) {
+        msg.style.color = "green";
+        msg.innerText = "✅ Đăng nhập thành công!";
+        localStorage.setItem("isLoggedIn", "true");
+
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1000);
+      } else {
+        msg.style.color = "red";
+        msg.innerText = "❌ Sai email hoặc mật khẩu!";
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
